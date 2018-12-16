@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editare categorie</h2>
+
+<form method="post" action="/Categorii/Edit/@ViewBag.Categorie.IdCategorie">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <label>Nume categorie</label>
+    <br />
+    <input type="text" name="NumeCategorie" value="@ViewBag.Categorie.NumeCategorie" />
+    <br />
+    <button type="submit">Modifica aceasta categorie</button>
+</form>
+
