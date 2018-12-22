@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Lista Produse";
+    var i = 0;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var prod in ViewBag.Produse12)
+{
+    <p>@prod.ProductId</p>
+    <img src="@ViewBag.ImageData[i]" width="100" height="100">
+    i++;
+    <p>@prod.Title</p>
+    <p>@prod.Description</p>
+    <p>@prod.Rating</p>
+    <br />
+    <a href="/Produs/Show/@prod.ProductId">Afisare produs</a>
+    <hr />
+    <br />
+}
+
+<a href="/Produs/Add">Adauga alt produs</a>
+

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Afisare Produs";
+    var id_sters = ViewBag.Produsul;
+}
+
+<h2>Afisare Produs</h2>
+<p>@ViewBag.Produsul.ProductId</p>
+<img src="@ViewBag.ImageData" width="100" height="100">
+<p>@ViewBag.Produsul.Title</p>
+<p>@ViewBag.Produsul.Description</p>
+<p>Rating @ViewBag.Produsul.Rating</p>
+<br />
+<form method="post" action="/Produs/Delete/@id_sters.ProductId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button type="submit">Sterge Produsul</button>
+</form>
+<hr />
+<a href="/Produs/Index">Inapoi la lista produselor</a>
+<br />

@@ -1,0 +1,21 @@
+﻿@model WebApplicationProiect.Models.Produs
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<p>Afisare formular de editare produs - cu datele vechi ale produsului</p>
+<form method="post" action="/Produs/Edit/@ViewBag.ProdusulDeEditat.ProductId">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    <label>Title</label>
+    <br /> <input type="text" name="Title" value="@ViewBag.ProdusulDeEditat.Title" />
+    <br /><br />
+
+    <label>Description</label>
+    <br /> <input type="text" name="Description" value="@ViewBag.ProdusulDeEditat.Description" />
+    <br /><br />
+
+    <button type="submit">Modifica Produs</button>
+</form>
